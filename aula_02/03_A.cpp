@@ -5,8 +5,6 @@ Cadastro de aluno
 Prof. Me. Orlando Saraiva Jr
 */
 #include <iostream>
-#include <string>
-#include <stdlib.h>
 
 using namespace std;
 
@@ -23,24 +21,18 @@ int main(int argc, char *argv[]) {
         float nota_2;
     };
 
-    int TOTAL = 4;
-    int x;
-    struct cadastro vetor_aluno[TOTAL];
+    struct cadastro vetor_aluno;
 
-    for(x = 0; x < TOTAL; x++) {
-        vetor_aluno[x].nome = recebe_nome_aluno();
-        vetor_aluno[x].disciplina = recebe_disciplina_aluno();
-        vetor_aluno[x].nota_1 = recebe_nota_1();
-        vetor_aluno[x].nota_2 = recebe_nota_2();
-    }
+    vetor_aluno.nome = recebe_nome_aluno();
+    vetor_aluno.disciplina = recebe_disciplina_aluno();
+    vetor_aluno.nota_1 = recebe_nota_1();
+    vetor_aluno.nota_2 = recebe_nota_2();
 
-    for(x = 0; x < TOTAL; x++) {
-        cout << "Nome = " << vetor_aluno[x].nome << endl;
-        cout << "Disciplina = " << vetor_aluno[x].disciplina << endl;
-        cout << "Nota 1 = " << vetor_aluno[x].nota_1 << endl;
-        cout << "Nota 2 = " << vetor_aluno[x].nota_2 << endl;
-        cout << "Média Simples = " << (vetor_aluno[x].nota_1 + vetor_aluno[x].nota_2) / 2 << endl;
-    }
+    cout << "Nome = " << vetor_aluno.nome << endl;
+    cout << "Disciplina = " << vetor_aluno.disciplina << endl;
+    cout << "Nota 1 = " << vetor_aluno.nota_1 << endl;
+    cout << "Nota 2 = " << vetor_aluno.nota_2 << endl;
+    cout << "Média Simples = " << (vetor_aluno.nota_1 + vetor_aluno.nota_2) / 2 << endl;
 
     return 0;
 }
@@ -60,6 +52,7 @@ string recebe_disciplina_aluno() {
 }
 
 float recebe_nota_1() {
+    string nota;
     float nota_1;
     cout << "Digite a nota do aluno: ";
     cin >> nota_1;

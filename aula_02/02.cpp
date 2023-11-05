@@ -5,7 +5,6 @@ Cadastro de aluno
 Prof. Me. Orlando Saraiva Jr
 */
 #include <iostream>
-#include <string>
 
 using namespace std;
 
