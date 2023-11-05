@@ -44,18 +44,18 @@ void buscar_clientes_valores_quantidades(Fila *, int);
 void buscar_clientes_valores_compras(Fila *, float);
 
 int main() {
-    Fila fila_caixa; 
+    Fila fila_caixa;
     CLIENTE atendido;
     inicializar(&fila_caixa);
     entrada_cliente(&fila_caixa, "Cliente Teste 1", 20, 1, 15.5);
     entrada_cliente(&fila_caixa, "Cliente Teste 2", 40, 2, 27.25);
     entrada_cliente(&fila_caixa, "Cliente Teste 3", 18, 6, 141.39);
     entrada_cliente(&fila_caixa, "Cliente Teste 4", 65, 8, 151.39);
-    
+
     mostraFila(&fila_caixa);
     dados_primeiro_fila(&fila_caixa);
     dados_ultimo_fila(&fila_caixa);
-    
+
     atendido = saida_cliente(&fila_caixa);
     atendido = saida_cliente(&fila_caixa);
     atendido = saida_cliente(&fila_caixa);
@@ -88,22 +88,22 @@ int main() {
     // Busca por idades
     cout << "\t Busca por Idades " << endl;
     cout << "\t ================" << endl;
-    buscar_clientes_menores_idade(&fila_caixa); 
-    buscar_clientes_melhor_idade(&fila_caixa); 
-    
-    //  Busca por valores mínimos gasto 
+    buscar_clientes_menores_idade(&fila_caixa);
+    buscar_clientes_melhor_idade(&fila_caixa);
+
+    //  Busca por valores mínimos gasto
     cout << "\t Busca por Gastos Mínimos " << endl;
     cout << "\t ========================" << endl;
-    buscar_clientes_valores_compras(&fila_caixa, 90); 
-    buscar_clientes_valores_compras(&fila_caixa, 150); 
-    
-    //  Busca por quantidades 
+    buscar_clientes_valores_compras(&fila_caixa, 90);
+    buscar_clientes_valores_compras(&fila_caixa, 150);
+
+    //  Busca por quantidades
     cout << "\t Busca por quantidades " << endl;
     cout << "\t =====================" << endl;
     buscar_clientes_valores_quantidades(&fila_caixa, 5);
     buscar_clientes_valores_quantidades(&fila_caixa, 10);
 
-    //  Busca por senha 
+    //  Busca por senha
     cout << "\t Busca por senha " << endl;
     cout << "\t ===============" << endl;
     buscar_clientes_senha(&fila_caixa, 3);
@@ -111,7 +111,7 @@ int main() {
 */
     encerrar(&fila_caixa);
     mostraFila(&fila_caixa);
-    
+
     return 0;
 }
 
@@ -132,14 +132,14 @@ CLIENTE saida_cliente(Fila *fila) {
             retorno = aux->cliente;
             aux->next = NULL;
             delete aux;
-            fila->tamanho = fila->tamanho - 1; 
+            fila->tamanho = fila->tamanho - 1;
         } else {
             retorno = fila->final->cliente;
             aux = fila->final;
             delete aux;
             fila->inicio = NULL;
             fila->final = NULL;
-            fila->tamanho = fila->tamanho - 1; 
+            fila->tamanho = fila->tamanho - 1;
         }
     } else {
         retorno.senha = -1;
@@ -153,7 +153,7 @@ CLIENTE saida_cliente(Fila *fila) {
 void entrada_cliente(Fila *fila, string nome, int idade, int quantidade_itens, float valor){
     Node *new_node = new Node;
     if (new_node == NULL) {
-        cerr << "Acabou a memória. " << endl; 
+        cerr << "Acabou a memória. " << endl;
         exit(1);
     }
     new_node->cliente.senha = fila->proxima_senha;
@@ -169,12 +169,12 @@ void entrada_cliente(Fila *fila, string nome, int idade, int quantidade_itens, f
     } else {
         Node* aux = fila->inicio;
         while(aux->next != NULL){
-            aux = aux->next;    
+            aux = aux->next;
         }
         aux->next = new_node;
-        fila->final = new_node; 
+        fila->final = new_node;
     }
-    fila->tamanho = fila->tamanho + 1; 
+    fila->tamanho = fila->tamanho + 1;
 }
 
 void mostraFila(Fila *fila){
@@ -207,7 +207,7 @@ void dados_primeiro_fila(Fila *fila){
 }
 
 void dados_ultimo_fila(Fila *fila){
-    if (fila->inicio != NULL) {    
+    if (fila->inicio != NULL) {
         cout << "Último da fila:  \t" << fila->final->cliente.senha << "  -  ";
         cout << fila->final->cliente.nome << "  -  ";
         cout << fila->final->cliente.idade << " anos  -  ";
@@ -218,7 +218,7 @@ void dados_ultimo_fila(Fila *fila){
 }
 
 void encerrar(Fila *fila){
-    if (fila->inicio != NULL) { 
+    if (fila->inicio != NULL) {
         while(fila->inicio->next != NULL){
             saida_cliente(fila);
         }
