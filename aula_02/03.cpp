@@ -21,18 +21,17 @@ int main(int argc, char *argv[]) {
         float nota_2;
     };
 
-    int TOTAL = 4;
-    int x;
-    struct cadastro vetor_aluno[TOTAL];
+    int total_alunos = 35;
+    cadastro vetor_aluno[total_alunos];
 
-    for(x = 0; x < TOTAL; x++) {
+    for(int x = 0; x < total_alunos; x++) {
         vetor_aluno[x].nome = recebe_nome_aluno();
         vetor_aluno[x].disciplina = recebe_disciplina_aluno();
         vetor_aluno[x].nota_1 = recebe_nota_1();
         vetor_aluno[x].nota_2 = recebe_nota_2();
     }
 
-    for(x = 0; x < TOTAL; x++) {
+    for(int x = 0; x < total_alunos; x++) {
         cout << "Nome = " << vetor_aluno[x].nome << endl;
         cout << "Disciplina = " << vetor_aluno[x].disciplina << endl;
         cout << "Nota 1 = " << vetor_aluno[x].nota_1 << endl;
