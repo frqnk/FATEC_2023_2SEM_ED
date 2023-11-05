@@ -28,6 +28,7 @@ int main(int argc, char *argv[]) {
     cout << "Nota 1 = " << nota_1 << endl;
     cout << "Nota 2 = " << nota_2 << endl;
     cout << "Média Simples = " << (nota_1 + nota_2) / 2 << endl;
+
     return 0;
 }
 
