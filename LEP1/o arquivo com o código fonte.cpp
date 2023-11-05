@@ -19,7 +19,7 @@ void mostrar_pilha(pilha*);
 void mostrar_tudo(pilha*);
 int qtde_vagas(pilha);
 
-int main() {
+void main() {
     pilha estacionamento;
     inicializar(&estacionamento);
 
