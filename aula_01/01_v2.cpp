@@ -8,7 +8,7 @@ using namespace std;
 
 int square(int);
 
-int main(int argc, char *argv[]) {
+int main() {
     for(int x = 1; x <= 10; x++) {
         cout << square(x) << " ";
     }
