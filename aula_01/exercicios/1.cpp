@@ -11,10 +11,7 @@ using std::cout, std::cin;
 
 int soma(int valor) {
     int valor_somado = 0;
-    while(valor > 0) {
-        valor_somado += valor;
-        valor--;
-    }
+    while(valor > 0) valor_somado += valor--;
     return valor_somado;
 }
 
