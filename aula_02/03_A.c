@@ -15,7 +15,7 @@ string recebe_disciplina_aluno();
 float recebe_nota_1();
 float recebe_nota_2();
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     struct cadastro {
         string nome;
         string disciplina;
@@ -35,6 +35,7 @@ int main(int argc, char *argv[]){
     cout << "Nota 1 = " << vetor_aluno.nota_1 << endl;
     cout << "Nota 2 = " << vetor_aluno.nota_2 << endl;
     cout << "Média Simples = " << (vetor_aluno.nota_1 + vetor_aluno.nota_2) / 2 << endl;
+
     return 0;
 }
 

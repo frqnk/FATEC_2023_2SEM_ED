@@ -14,7 +14,7 @@ string recebe_disciplina_aluno();
 float recebe_nota_1();
 float recebe_nota_2();
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     string nome[2];
     string disciplina[2];
     float nota_1[2];
@@ -22,14 +22,14 @@ int main(int argc, char *argv[]){
 
     int x;
 
-    for ( x = 0; x<2; x++) {
+    for(x = 0; x < 2; x++) {
         nome[x] = recebe_nome_aluno();
         disciplina[x] = recebe_disciplina_aluno();
         nota_1[x] = recebe_nota_1();
         nota_2[x] = recebe_nota_2();
     }
 
-    for ( x = 0; x<2; x++) {
+    for(x = 0; x < 2; x++) {
         cout << endl;
         cout << "Nome = " << nome[x] << endl;
         cout << "Disciplina = " << disciplina[x] << endl;
@@ -38,7 +38,6 @@ int main(int argc, char *argv[]){
         cout << "Média Simples = " << (nota_1[x] + nota_2[x]) / 2 << endl;
         cout << "=====================================";
     }
-
 
     return 0;
 }

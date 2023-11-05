@@ -15,7 +15,7 @@ string recebe_disciplina_aluno();
 float recebe_nota_1();
 float recebe_nota_2();
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     struct cadastro {
         string nome;
         string disciplina;
@@ -27,14 +27,14 @@ int main(int argc, char *argv[]){
     int x;
     struct cadastro vetor_aluno[TOTAL];
 
-    for ( x = 0; x<TOTAL; x++) {
+    for(x = 0; x < TOTAL; x++) {
         vetor_aluno[x].nome = recebe_nome_aluno();
         vetor_aluno[x].disciplina = recebe_disciplina_aluno();
         vetor_aluno[x].nota_1 = recebe_nota_1();
         vetor_aluno[x].nota_2 = recebe_nota_2();
     }
 
-    for ( x = 0; x<TOTAL; x++) {
+    for(x = 0; x < TOTAL; x++) {
         cout << "Nome = " << vetor_aluno[x].nome << endl;
         cout << "Disciplina = " << vetor_aluno[x].disciplina << endl;
         cout << "Nota 1 = " << vetor_aluno[x].nota_1 << endl;
