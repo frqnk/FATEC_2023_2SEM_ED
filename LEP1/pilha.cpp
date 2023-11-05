@@ -1,72 +1,92 @@
 #include <iostream>
-
 #define CAPACIDADE_DO_ESTACIONAMENTO 10
-
 using namespace std;
 
 struct carro {
     string placa;
     int ano;
 };
-struct espaço_para_estacionar {
+struct pilha {
     carro vaga[CAPACIDADE_DO_ESTACIONAMENTO];
     int contador;
 };
 
-void inicializar(espaço_para_estacionar* pilha);
-void estacionar(espaço_para_estacionar* local, string placa, int ano);
-void estacionar(espaço_para_estacionar* local, carro veículo);
-carro sair(espaço_para_estacionar* local);
-void imprime_pilha(espaço_para_estacionar* pilha);
-void imprime_tudo(espaço_para_estacionar* pilha);
-int qtde_vagas(espaço_para_estacionar local);
+void inicializar(pilha* estacionamento);
+void estacionar(pilha* estacionamento, string placa, int ano);
+void estacionar(pilha* estacionamento, carro carro_comum);
+carro sair(pilha* estacionamento);
+void mostrar_pilha(pilha* estacionamento);
+void mostrar_tudo(pilha* estacionamento);
+int qtde_vagas(pilha estacionamento);
 
 int main() {
-    espaço_para_estacionar estacionamento;
+    pilha estacionamento;
     inicializar(&estacionamento);
 
-    estacionar(&estacionamento, 'ABC1234', 1999);
+    estacionar(&estacionamento, "ABC1234", 1999);
 
-    carro carro_instanciado = {'DOW5782', 2004};
-    estacionar(&estacionamento, carro_instanciado);
+    carro carro_comum = {"DOW5782", 2004};
+    estacionar(&estacionamento, carro_comum);
 
-    cout << 'Qtde. de vagas: ' << qtde_vagas(estacionamento) << endl;
+    cout << "Quantidade de vagas " << qtde_vagas(estacionamento) << "\n";
 
-    imprime_pilha(&estacionamento);
+    mostrar_pilha(&estacionamento);
 
-    estacionar(&estacionamento, 'XYZ3215', 2022);
-    estacionar(&estacionamento, 'WQT2245', 2020);
-    estacionar(&estacionamento, 'GIN3285', 2017);
-    estacionar(&estacionamento, 'HIX5215', 2008);
+    estacionar(&estacionamento, "XYZ3215", 2022);
+    estacionar(&estacionamento, "WQT2245", 2020);
+    estacionar(&estacionamento, "GIN3285", 2017);
+    estacionar(&estacionamento, "HIX5215", 2008);
 
-    imprime_pilha(&estacionamento);
+    mostrar_pilha(&estacionamento);
 
-    carro_instanciado = sair(&estacionamento);
-    cout << 'Saiu o carro: ' << carro_instanciado.placa << endl;
+    carro_comum = sair(&estacionamento);
+    cout << "Saiu o carro: " << carro_comum.placa << "\n";
 
-    imprime_pilha(&estacionamento);
+    mostrar_pilha(&estacionamento);
 
-    cout << 'Qtde. de vagas: ' << qtde_vagas(estacionamento) << endl;
+    cout << "Quantidade de vagas " << qtde_vagas(estacionamento) << "\n";
 
-    imprime_tudo(&estacionamento);
+    mostrar_tudo(&estacionamento);
 }
 
-void inicializar(espaço_para_estacionar* pilha) {
-    pilha->contador = 0;
-    for(int x = 0; x < CAPACIDADE_DO_ESTACIONAMENTO; x++) {
-        pilha->vaga[x].placa = 'AAA0000';
-        pilha->vaga[x].ano = 0;
+void inicializar(pilha* estacionamento) {
+    estacionamento->contador = 0;
+    for(int i = CAPACIDADE_DO_ESTACIONAMENTO-1; i >= 0; i--) {
+        estacionamento->vaga[i] = {"AAA0000", 0};
     }
 }
 
-void estacionar(espaço_para_estacionar* local, string placa, int ano) {}
+void estacionar(pilha* estacionamento, string placa, int ano) {
+    estacionamento->vaga[estacionamento->contador++] = {placa, ano};
+}
 
-void estacionar(espaço_para_estacionar* local, carro veículo) {}
+void estacionar(pilha* estacionamento, carro carro_comum) {
+    estacionamento->vaga[estacionamento->contador++] = carro_comum;
+}
 
-carro sair(espaço_para_estacionar* local) {}
+carro sair(pilha* estacionamento) {
+    carro carro_que_saiu = estacionamento->vaga[--estacionamento->contador];
+    estacionamento->vaga[estacionamento->contador] = {"XXX0000", 0};
+    return carro_que_saiu;
+}
 
-void imprime_pilha(espaço_para_estacionar* pilha) {}
+void mostrar_pilha(pilha* estacionamento) {
+    cout << "PILHA DE CARROS\n";
+    cout << "================\n";
+    for(int i = estacionamento->contador-1; i >= 0; i--) {
+        cout << estacionamento->vaga[i].placa << "\t" << estacionamento->vaga[i].ano << "\n";
+    }
+    cout << "\n";
+}
 
-void imprime_tudo(espaço_para_estacionar* pilha) {}
+void mostrar_tudo(pilha* estacionamento) {
+    cout << "TODA A PILHA\n";
+    cout << "================\n";
+    for(int i = CAPACIDADE_DO_ESTACIONAMENTO-1; i >= 0; i--) {
+        cout << estacionamento->vaga[i].placa << "\t" << estacionamento->vaga[i].ano << "\n";
+    }
+}
 
-int qtde_vagas(espaço_para_estacionar local) {}
+int qtde_vagas(pilha estacionamento) {
+    return CAPACIDADE_DO_ESTACIONAMENTO - estacionamento.contador;
+}
