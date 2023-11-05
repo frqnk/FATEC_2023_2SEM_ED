@@ -12,7 +12,7 @@ string recebe_disciplina_aluno();
 float recebe_nota_1();
 float recebe_nota_2();
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     string nome;
     string disciplina;
     float nota_1;

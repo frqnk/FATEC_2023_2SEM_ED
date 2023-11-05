@@ -7,7 +7,7 @@ Exemplo de funções e passagem de parâmetros
 */
 
 void nao_troca_valores(int valor_1, int valor_2);
-void troca_valores(int *ponteiro_1, int *ponteiro_2);
+void troca_valores(int* ponteiro_1, int* ponteiro_2);
 
 void funcao_1_1() {
     float b;
@@ -23,7 +23,7 @@ void funcao_1() {
     funcao_1_1();
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int numero_1;
     int numero_2;
 
@@ -55,7 +55,7 @@ void nao_troca_valores(int valor_1, int valor_2) {
 }
 
 /* Passagem por referência */
-void troca_valores(int *ponteiro_1, int *ponteiro_2) {
+void troca_valores(int* ponteiro_1, int* ponteiro_2) {
     int auxiliar;
     auxiliar = *ponteiro_1;
     *ponteiro_1 = *ponteiro_2;

@@ -4,7 +4,7 @@ Desenvolva uma aplicação para cadastrar carro. Insira na estrutura informaçõ
 #include <iostream>
 #include <string>
 
-using std::string, std::cout, std::cin, std::endl;
+using std::string, std::cout, std::cin;
 
 struct cadastro_de_veículo {
     string marca, modelo, cor;
@@ -47,9 +47,6 @@ void cadastrar(cadastro_de_veículo* carro) {
 }
 
 void mostrar(cadastro_de_veículo carro) {
-    cout << carro.marca << " ";
-    cout << carro.modelo << " ";
-    cout << carro.ano << " ";
-    cout << carro.cor << "\n";
+    cout << carro.marca << " " << carro.modelo << " " << carro.ano << " " << carro.cor << "\n";
     cout << "---\n";
 }

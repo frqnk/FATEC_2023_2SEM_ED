@@ -9,9 +9,9 @@ Pearson Education, Inc. All Rights Reserved.
 
 using namespace std;
 
-void cubeByReference(int *nPtr); /* Protótipo */
+void cubeByReference(int* nPtr); /* Protótipo */
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int numero = 5;
     cout << "O valor original é " << numero << endl;
 
@@ -22,6 +22,6 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-void cubeByReference(int *nPtr) {
+void cubeByReference(int* nPtr) {
     *nPtr = *nPtr * *nPtr * *nPtr;
 }

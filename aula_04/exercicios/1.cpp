@@ -35,9 +35,5 @@ void cadastrar(cadastro_de_veículo* carro) {
 }
 
 void mostrar(cadastro_de_veículo carro) {
-    cout << "Carro cadastrado: ";
-    cout << carro.marca << " ";
-    cout << carro.modelo << " ";
-    cout << carro.ano << " ";
-    cout << carro.cor << endl;
+    cout << "Carro cadastrado: " << carro.marca << " " << carro.modelo << " " << carro.ano << " " << carro.cor << endl;
 }

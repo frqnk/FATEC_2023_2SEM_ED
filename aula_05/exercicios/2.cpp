@@ -4,7 +4,7 @@ Desenvolva uma aplicação para cadastrar cliente que fará um crédito em até 
 #include <iostream>
 #include <string>
 
-using std::string, std::cout, std::cin, std::endl;
+using std::string, std::cout, std::cin;
 
 struct cadastro_em_loja {
     string nome, cpf;
@@ -50,6 +50,6 @@ void mostrar(cadastro_em_loja cliente) {
     cout << "Nome: " << cliente.nome << "\n";
     cout << "CPF: " << cliente.cpf << "\n";
     cout << "Crédito: " << cliente.crédito << "\n";
-    cout << "Nº de vezes: " << cliente.n_vezes << endl;
+    cout << "Nº de vezes: " << cliente.n_vezes << "\n";
     cout << "---\n";
 }

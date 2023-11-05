@@ -7,7 +7,7 @@ Orlando Saraiva Jr
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int numero_1;
     int* numero_2;
     cout << " Digite um numero " << endl;

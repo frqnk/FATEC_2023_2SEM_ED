@@ -21,11 +21,7 @@ int main() {
     cout << "Cor: ";
     cin >> carro.cor;
 
-    cout << "Carro cadastrado: ";
-    cout << carro.marca << " ";
-    cout << carro.modelo << " ";
-    cout << carro.ano << " ";
-    cout << carro.cor << endl;
+    cout << "Carro cadastrado: " << carro.marca << " " << carro.modelo << " " << carro.ano << " " << carro.cor << endl;
 
     return 0;
 }

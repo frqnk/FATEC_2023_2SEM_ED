@@ -13,7 +13,7 @@ string recebe_disciplina_aluno();
 float recebe_nota_1();
 float recebe_nota_2();
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     struct cadastro {
         string nome;
         string disciplina;
@@ -23,12 +23,16 @@ int main(int argc, char *argv[]) {
         float media_simples;
     };
 
+<<<<<<< HEAD
 <<<<<<< HEAD:aula_02/03.cpp
 =======
     };
 
 >>>>>>> 4cd1ff0 ()
     int total_alunos = 35;
+=======
+    int total_alunos = 3;
+>>>>>>> 7ea4380 ()
     cadastro vetor_aluno[total_alunos];
 
     for(int x = 0; x < total_alunos; x++) {

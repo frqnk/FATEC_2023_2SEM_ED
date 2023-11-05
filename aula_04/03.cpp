@@ -7,7 +7,7 @@ Prof. Me. Orlando Saraiva Jr
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int a = 20;
     float b = 4.5;
     string c = "Oi Mundo";
@@ -23,5 +23,3 @@ int main(int argc, char *argv[]) {
     cout << "O valor de *ptr eh " << *((string*) ptr) << endl;
     return 0;
 }
-
-// casting
