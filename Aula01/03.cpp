@@ -3,16 +3,18 @@
 using namespace std;
 
 int fatorial(int n) {
-    if ((n==1) || (n==0)){
+    if(n <= 1) {
         return 1;
-    } else {
-        return fatorial(n-1)*n;
+    }
+    else {
+        return n * fatorial(n-1);
     }
 }
 
-int main () {
+int main() {
     int n;
-    cout << "Informe o número que deseja obter o fatorial:" << endl;
+    cout << "Informe o número que deseja obter o fatorial: ";
     cin >> n;
     cout << "O fatorial de " << n << " eh " << fatorial(n) << endl;
+    return 0;
 }
