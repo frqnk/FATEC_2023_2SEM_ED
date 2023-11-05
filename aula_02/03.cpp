@@ -19,8 +19,15 @@ int main(int argc, char *argv[]) {
         string disciplina;
         float nota_1;
         float nota_2;
+<<<<<<< HEAD
+        float media_simples;
     };
 
+<<<<<<< HEAD:aula_02/03.cpp
+=======
+    };
+
+>>>>>>> 4cd1ff0 ()
     int total_alunos = 35;
     cadastro vetor_aluno[total_alunos];
 
@@ -39,6 +46,24 @@ int main(int argc, char *argv[]) {
         cout << "Média Simples = " << (vetor_aluno[x].nota_1 + vetor_aluno[x].nota_2) / 2 << endl;
     }
 
+<<<<<<< HEAD
+=======
+    struct cadastro aluno1;
+
+    aluno1.nome = recebe_nome_aluno();
+    aluno1.disciplina = recebe_disciplina_aluno();
+    aluno1.nota_1 = recebe_nota_1();
+    aluno1.nota_2 = recebe_nota_2();
+
+    cout << "Nome = " << aluno1.nome << endl;
+    cout << "Disciplina = " << aluno1.disciplina << endl;
+    cout << "Nota 1 = " << aluno1.nota_1 << endl;
+    cout << "Nota 2 = " << aluno1.nota_2 << endl;
+    aluno1.media_simples = (aluno1.nota_1 + aluno1.nota_2) / 2;
+    cout << "Média Simples = " << aluno1.media_simples  << endl;
+>>>>>>> 6562a28 (Update 3A):Aula02/03_A.c
+=======
+>>>>>>> 4cd1ff0 ()
     return 0;
 }
 
