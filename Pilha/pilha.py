@@ -1,31 +1,28 @@
-'''
- Exemplo do uso de pilha.
+"""
+Exemplo do uso de pilha.
 
- Prof. Me. Orlando Saraiva Jr
- Criado em : 05/04/2018
- '''
-
-
+Prof. Me. Orlando Saraiva Jr
+"""
 class Pilha:
-    """ Classe Pilha, representando uma pilha """
+    # Classe Pilha, representando uma pilha
     def __init__(self):
-        """No construtor, cria-se uma lista """
+        # No construtor, cria-se uma lista
         self._data = []
 
     def __len__(self):
-        """Retorna o tamanho da pilha"""
+        # Retorna o tamanho da pilha
         return len(self._data)
 
     def is_empty(self):
-        """Checa se a pilha está vazia"""
+        # Checa se a pilha está vazia
         return len(self._data) == 0
 
     def push(self, e):
-        """Adiciona um elemento a pilha"""
+        # Adiciona um elemento a pilha
         self._data.append(e)
 
     def desempilhar(self):
-        """Adiciona um elemento a pilha"""
+        # Adiciona um elemento a pilha
         if self.is_empty():
             print('Pilha vazia')
         else:
@@ -33,7 +30,6 @@ class Pilha:
 
     def __str__(self):
         return str(self._data)
-
 
 if __name__ == '__main__':
     q = Pilha()
